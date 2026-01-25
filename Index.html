@@ -1,0 +1,131 @@
+html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Espetinho do Val</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #8B0000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .mascote {
+      text-align: center;
+      margin: 20px;
+    }
+    .cardapio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .item {
+      background-color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      width: 300px;
+      padding: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .item h3 {
+      margin: 10px 0 5px;
+    }
+    .item p {
+      margin: 5px 0;
+    }
+    footer {
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Espetinho do Val</h1>
+  <p>O melhor espetinho de Petrolina e região!</p>
+</header>
+
+<div class="mascote">
+  <img src="https://github.com/user-attachments/assets/f23d8f1f-f793-465b-ad82-974da9c6f505" alt="Capivara barriguda mascote" width="200">
+  <p>Capivara barriguda recomenda: prove o Espetinho Bahiano Baião!</p>
+</div>
+
+<div class="cardapio" id="cardapio"></div>
+
+<footer>
+  <p>Faça já seu pedido: (74) 98802-3291 / (74) 98806-5036</p>
+</footer>
+
+<script>
+  const itens = [
+    {
+      nome: "Espetinho Completo",
+      preco: "R$ 16,99",
+      descricao: "1 espetinho simples, purê de macaxeira, farofa, vinagrete",
+      imagem: "https://github.com/user-attachments/assets/922d72c2-e288-4667-933e-108eb776d445"
+    },
+    {
+      nome: "Espetinho Especial",
+      preco: "R$ 21,99",
+      descricao: "Purê de macaxeira, farofa, vinagrete, baião de Dois",
+      imagem: "https://github.com/user-attachments/assets/731742ac-9ad5-4f79-921a-ccf016548b4d"
+    },
+    {
+      nome: "Espetinho Bahiano",
+      preco: "R$ 25,99",
+      descricao: "Arroz, vatapá, farofa",
+      imagem: "https://github.com/user-attachments/assets/691ed71f-0d42-48de-b3e8-fdd77c7cafa9"
+    },
+    {
+      nome: "Espetinho Bahiano Baião",
+      preco: "R$ 29,99",
+      descricao: "Espetinho simples, baião de dois, vatapá e batata palha",
+      imagem: "/attachments/r6E1DZGzqdh2suUvGyhG6.jpeg"
+    },
+    {
+      nome: "Espetinho Simples",
+      preco: "R$ 9,99",
+      descricao: "Cupim, Contra Filé, Frango, Picanha Suína, Medalhão de frango",
+      imagem: "/attachments/Hdc9sLgpPKoAvPD84q2s6.jpeg"
+    },
+    {
+      nome: "Espetinho Empanado",
+      preco: "R$ 12,99",
+      descricao: "Frango, Frango com Bacon, Contra Filé",
+      imagem: "/attachments/9wyWhBcb5tz4YZCejSbbn.jpeg"
+    }
+  ];
+
+  const container = document.getElementById("cardapio");
+
+  itens.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `
+      <img src="${item.imagem}" alt="${item.nome}">
+      <h3>${item.nome}</h3>
+      <p>${item.descricao}</p>
+      <strong>${item.preco}</strong>
+    `;
+    container.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
